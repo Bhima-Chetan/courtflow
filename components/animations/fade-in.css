@@ -1,0 +1,44 @@
+.fade-in {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.fade-in-up {
+  transform: translateY(40px);
+}
+
+.fade-in-down {
+  transform: translateY(-40px);
+}
+
+.fade-in-left {
+  transform: translateX(-40px);
+}
+
+.fade-in-right {
+  transform: translateX(40px);
+}
+
+.fade-in-scale {
+  transform: scale(0.9);
+}
+
+.fade-in.visible {
+  animation: fadeIn var(--animation-duration, 800ms) cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
