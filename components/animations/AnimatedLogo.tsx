@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import './animated-logo.css';
 
 interface AnimatedLogoProps {
@@ -26,13 +25,12 @@ export default function AnimatedLogo({ size = 'md', showText = true }: AnimatedL
   return (
     <div className="flex items-center gap-3">
       <div className="animated-logo-container">
-        <Image 
+        <img 
           src="/courtflow-logo.png" 
           alt="CourtFlow Logo" 
           width={logoSize}
           height={logoSize}
           className="animated-logo-image"
-          priority
         />
       </div>
       {showText && (
