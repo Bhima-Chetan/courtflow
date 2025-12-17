@@ -7,11 +7,11 @@ const globalForPrisma = globalThis as unknown as {
 
 function createPrismaClient() {
   const connectionString = process.env.DATABASE_URL!;
-  // PrismaNeon expects PoolConfig object, not a Pool instance
-  const adapter = new PrismaNeon({ connectionString });
+  // PrismaNeon takes PoolConfig (connection string object), not a Pool instance
+  const neonAdapter = new PrismaNeon({ connectionString });
   
   return new PrismaClient({
-    adapter,
+    adapter: neonAdapter as any,
     log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
   });
 }
