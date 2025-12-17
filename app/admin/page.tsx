@@ -5,6 +5,8 @@ import { formatCurrency } from '@/lib/utils';
 import prisma from '@/lib/prisma';
 import { BookingStatus } from '@prisma/client';
 
+export const dynamic = 'force-dynamic';
+
 async function getAdminStats() {
   const now = new Date();
   const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
