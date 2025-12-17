@@ -24,12 +24,10 @@ export default function AnimatedLogo({ size = 'md', showText = true }: AnimatedL
 
   return (
     <div className="flex items-center gap-3">
-      <div className="animated-logo-container">
+      <div className="animated-logo-container" style={{ width: logoSize, height: logoSize }}>
         <img 
           src="/courtflow-logo.png" 
           alt="CourtFlow Logo" 
-          width={logoSize}
-          height={logoSize}
           className="animated-logo-image"
         />
       </div>

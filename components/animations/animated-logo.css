@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
   transition: transform 0.3s ease-out;
 }
 
@@ -12,8 +14,9 @@
 
 .animated-logo-image {
   display: block;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   transition: all 0.3s ease-out;
   filter: drop-shadow(0 0 6px rgba(127, 255, 0, 0.25));
 }
