@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { PrismaNeon } from '@prisma/adapter-neon';
-import type { DriverAdapter } from '@prisma/driver-adapter-utils';
+import type { SqlDriverAdapterFactory } from '@prisma/driver-adapter-utils';
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
@@ -12,7 +12,7 @@ function createPrismaClient() {
   const neonAdapter = new PrismaNeon({ connectionString });
   
   return new PrismaClient({
-    adapter: neonAdapter as unknown as DriverAdapter,
+    adapter: neonAdapter as unknown as SqlDriverAdapterFactory,
     log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
   });
 }
